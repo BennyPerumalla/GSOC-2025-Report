@@ -61,11 +61,10 @@
     transform: rotate(180deg);
   }
 
-  .selectContent {
+.selectContent {
     z-index: var(--z-overlay);
     max-height: var(--radix-select-content-available-height);
-    min-width: 12rem;
-    max-width: 24rem;
+    width: min(42rem, max(24rem, var(--radix-select-trigger-width)));
     overflow: hidden;
     background-color: var(--popup);
     color: var(--popup-foreground);
@@ -86,8 +85,8 @@
     }
   }
 
-  .selectViewport {
-    padding: var(--spacing-2);
+.selectViewport {
+    padding: var(--spacing-1) var(--spacing-2);
   }
 
   .scrollButton {
@@ -138,14 +137,15 @@
       color var(--animation-duration-fast) ease;
   }
 
-  .selectItem:hover {
-    background-color: var(--primary);
-    color: var(--primary-foreground);
+.selectItem:hover {
+    background-color: color-mix(in srgb, var(--primary) 12%, var(--popup) 88%);
+    color: var(--popup-foreground);
   }
 
-  .selectItem:focus-visible {
-    background-color: var(--primary);
-    color: var(--primary-foreground);
+  .selectItem:focus-visible,
+  .selectItem[data-state="checked"] {
+    background-color: color-mix(in srgb, var(--primary) 18%, var(--popup) 82%);
+    color: var(--popup-foreground);
   }
 
   .selectItem[data-disabled] {

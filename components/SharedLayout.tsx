@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Cone, Github } from "lucide-react";
+import { Cone, Github, Linkedin } from "lucide-react";
 import styles from "./SharedLayout.module.css";
 
 interface SharedLayoutProps {
@@ -36,15 +36,26 @@ export const SharedLayout = ({ children }: SharedLayoutProps) => {
               </Link>
             ))}
           </nav>
-          <a
-            href="https://github.com/BennyPerumalla"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.githubLink}
-            aria-label="Benny Perumalla GitHub Repository"
-          >
-            <Github size={20} />
-          </a>
+          <div className={styles.headerActions}>
+            <a
+              href="https://github.com/BennyPerumalla"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.githubLink}
+              aria-label="Benny Perumalla GitHub Repository"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/benny-perumalla-a7ab6024a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.githubLink}
+              aria-label="Benny Perumalla LinkedIn Profile"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
         </div>
       </header>
       <main className={styles.main}>{children}</main>
