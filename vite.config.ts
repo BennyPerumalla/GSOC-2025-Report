@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import path from "node:path";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 export default defineConfig(({ isSsrBuild }) => ({
@@ -19,4 +18,5 @@ export default defineConfig(({ isSsrBuild }) => ({
   build: {
     assetsDir: "_assets",
   },
+  base:{ 'GSOC-2025-Report'},
 }));
