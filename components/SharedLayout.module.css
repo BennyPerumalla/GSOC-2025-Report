@@ -12,8 +12,7 @@
   top: 0;
   z-index: var(--z-nav-sticky);
   width: 100%;
-  background-color: color-mix(in srgb, var(--background) 80%, transparent);
-  backdrop-filter: blur(8px);
+  background-color: var(--background);
   border-bottom: 1px solid var(--border);
 }
 
@@ -101,6 +100,165 @@
   gap: var(--spacing-4);
 }
 
+.menuToggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--muted-foreground);
+  padding: var(--spacing-2);
+  border-radius: var(--radius-sm);
+}
+
+.menuToggle:hover {
+  color: var(--foreground);
+  background-color: color-mix(in srgb, var(--card) 95%, var(--foreground) 5%);
+}
+
+/* Mobile menu */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+ .mobileMenuContent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: min(85vw, 360px);
+  background: var(--popup);
+  color: var(--popup-foreground);
+  border-left: 1px solid var(--border);
+  transform: translateX(100%);
+  transition: transform var(--animation-duration-normal) ease;
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  /* Ensure the drawer sits above the backdrop */
+  z-index: 2;
+ }
+ 
+ .backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  border: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity var(--animation-duration-normal) ease;
+  /* Keep backdrop below the drawer but above page content */
+  z-index: 1;
+ }
+
+.mobileMenu.open {
+  pointer-events: auto;
+}
+
+.mobileMenu.open .mobileMenuContent {
+  transform: translateX(0);
+}
+
+.mobileMenu.open .backdrop {
+  opacity: 1;
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobileMenuTitle {
+  font-weight: 700;
+}
+
+.menuClose {
+  background: transparent;
+  border: none;
+  color: var(--popup-foreground);
+}
+
+.mobileSearchRow {
+  display: flex;
+}
+
+.searchBox {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--spacing-2);
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius);
+}
+
+.searchBox input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--popup-foreground);
+}
+
+.kbd {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.mobileNavLink {
+  color: var(--popup-foreground);
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--spacing-2) 0;
+}
+
+.mobileNavLink:hover {
+  color: var(--primary);
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-top: auto;
+}
+
+.mobileThemeRow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--muted-foreground);
+}
+
+.mobileIconLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--popup-foreground);
+  text-decoration: none;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.mobileIconLink:hover {
+  color: var(--primary);
+  border-color: color-mix(in srgb, var(--primary), white 60%);
+}
+
 .main {
   flex-grow: 1;
 }
@@ -152,5 +310,9 @@
 @media (max-width: 768px) {
   .nav {
     display: none;
+  }
+
+  .menuToggle {
+    display: inline-flex;
   }
 }
