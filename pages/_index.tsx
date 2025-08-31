@@ -7,6 +7,7 @@ import {
   Layers3,
   SlidersHorizontal,
   Waves,
+  Linkedin,
 } from "lucide-react";
 import { Button } from "../components/Button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/Tabs";
@@ -286,8 +287,8 @@ const IndexPage = () => {
                       </a>
                     </h4>
                     <p>
-                      Introduced the core spatializer module with stereo width
-                      controls. Merged in VLC 4.0.
+                     The dynaudnorm filter addresses this by dynamically compressing the audio's dynamic range
+                      to maintain a consistent volume level, enhancing the overall listening experience.
                     </p>
                   </div>
                   <div className={styles.contributionItem}>
@@ -301,7 +302,7 @@ const IndexPage = () => {
                       </a>
                     </h4>
                     <p>
-                    enhances the usability of the spatializer filter, making a powerful audio effect more accessible to all VLC users.
+                   A user-friendly preset system to the Audio Spatializer filter, improving usability by allowing users to quickly select from a range of pre-configured reverb environments.
                     </p>
                   </div>
                   <div className={styles.contributionItem}>
@@ -315,8 +316,7 @@ const IndexPage = () => {
                       </a>
                     </h4>
                     <p>
-                      Standardized audio buffer management across multiple
-                      filters to reduce memory overhead and complexity.
+                      The integration of a multiband compressor into the existing compressor functionality within VLC. This enhancement significantly improves audio processing capabilities by allowing independent compression across different frequency bands.
                     </p>
                   </div>
                 </div>
@@ -334,6 +334,32 @@ const IndexPage = () => {
             <div className={styles.footerAttribution}>
               <p>Created by <strong>Benny Perumalla</strong></p>
               <p>© 2025 - Contributing to VLC Media Player</p>
+            </div>
+
+            <div className={styles.mentorThanks}>
+              <p className={styles.mentorHeading}>With gratitude to my mentors</p>
+              <div className={styles.mentorList}>
+                <a
+                  className={styles.mentorLink}
+                  href="http://linkedin.com/in/thomasguillem/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Thomas Guillem on LinkedIn"
+                >
+                  <Linkedin size={16} />
+                  <span>Thomas Guillem</span>
+                </a>
+                <a
+                  className={styles.mentorLink}
+                  href="https://www.linkedin.com/in/fcartegnie/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Francois Cartegnie on LinkedIn"
+                >
+                  <Linkedin size={16} />
+                  <span>Francois Cartegnie</span>
+                </a>
+              </div>
             </div>
           </div>
         </footer>

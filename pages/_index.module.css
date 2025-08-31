@@ -353,7 +353,7 @@
   font-weight: 500;
 }
 
-.footerAttribution {
+ .footerAttribution {
   font-size: 0.9rem;
   color: var(--muted-foreground);
   line-height: 1.4;
@@ -362,6 +362,49 @@
 .footerAttribution strong {
   color: var(--foreground);
   font-weight: 600;
+}
+
+/* Mentors thanks */
+.mentorThanks {
+  width: 100%;
+  margin-top: var(--spacing-4);
+  padding: var(--spacing-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: color-mix(in srgb, var(--primary), white 97%);
+}
+
+.mentorHeading {
+  margin: 0 0 var(--spacing-3) 0;
+  font-weight: 600;
+  color: var(--foreground);
+  text-align: center;
+}
+
+.mentorList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.mentorLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--primary), white 70%);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary), white 96%);
+  transition: background-color var(--animation-duration-fast) ease, color var(--animation-duration-fast) ease, border-color var(--animation-duration-fast) ease;
+}
+
+.mentorLink:hover {
+  background: color-mix(in srgb, var(--primary), white 92%);
+  border-color: color-mix(in srgb, var(--primary), white 40%);
 }
 
 
