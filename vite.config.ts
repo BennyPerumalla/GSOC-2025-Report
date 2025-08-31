@@ -18,5 +18,5 @@ export default defineConfig(({ isSsrBuild }) => ({
   build: {
     assetsDir: "_assets",
   },
-  base:{ 'GSOC-2025-Report'},
+  base: '/GSOC-2025-Report/'
 }));
