@@ -1,0 +1,270 @@
+.pageContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-6);
+}
+
+.header {
+  margin-bottom: var(--spacing-12);
+  padding-bottom: var(--spacing-8);
+  border-bottom: 1px solid var(--border);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  flex-wrap: wrap;
+}
+
+.vlcLogo {
+  flex-shrink: 0;
+}
+
+.headerText {
+  flex: 1;
+  min-width: 300px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-3);
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--muted-foreground);
+  max-width: 60ch;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.attribution {
+  margin-top: var(--spacing-4);
+  padding: var(--spacing-3) var(--spacing-4);
+  background-color: color-mix(in srgb, var(--primary), white 95%);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.attribution p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.attribution strong {
+  font-weight: 600;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.documentationSection {
+  width: 100%;
+}
+
+.technicalSection {
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-8);
+  padding-bottom: var(--spacing-3);
+  border-bottom: 2px solid var(--primary);
+  letter-spacing: -0.02em;
+}
+
+/* Multi PDF Viewer Container */
+.multiPdfViewerContainer {
+  margin-bottom: var(--spacing-8);
+}
+
+/* Contributions Section */
+.contributionsSection {
+  margin-top: var(--spacing-12);
+  padding-top: var(--spacing-8);
+  border-top: 1px solid var(--border);
+}
+
+.contributionsTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-6);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* Merge Requests */
+.mrList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.mrItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition:
+    background-color var(--animation-duration-fast) ease,
+    border-color var(--animation-duration-fast) ease,
+    transform var(--animation-duration-fast) ease;
+}
+
+.mrItem:hover {
+  background-color: var(--muted);
+  border-color: color-mix(in srgb, var(--primary), white 80%);
+  transform: translateY(-1px);
+}
+
+.mrIcon {
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.mrDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  flex: 1;
+}
+
+.mrDetails a {
+  color: var(--foreground);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.mrDetails a:hover {
+  text-decoration: underline;
+  color: var(--secondary);
+}
+
+.mrDetails span {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  margin-top: var(--spacing-16);
+  padding: var(--spacing-8) 0;
+  border-top: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.footerBranding {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.footerAttribution {
+  text-align: right;
+}
+
+.footerAttribution p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  line-height: 1.4;
+}
+
+.footerAttribution strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pageContainer {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .headerContent {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-4);
+  }
+
+  .headerText {
+    min-width: auto;
+  }
+
+  .attribution {
+    display: block;
+    text-align: center;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footerAttribution {
+    text-align: center;
+  }
+
+  .mrItem {
+    padding: var(--spacing-3);
+  }
+
+  .mrDetails a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Dark mode adjustments */
+:global(.dark) .attribution {
+  background-color: color-mix(in srgb, var(--primary), black 95%);
+  border-color: color-mix(in srgb, var(--primary), black 80%);
+}
+
+:global(.dark) .attribution p {
+  color: color-mix(in srgb, var(--primary), white 20%);
+}
