@@ -1,0 +1,39 @@
+.container {
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-family: var(--font-family-monospace);
+  font-size: 0.875rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: color-mix(in srgb, var(--border) 50%, transparent);
+}
+
+.language {
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.checkIcon {
+  color: var(--success);
+}
+
+.pre {
+  margin: 0;
+  padding: var(--spacing-4);
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+.code {
+  color: var(--foreground);
+  white-space: pre-wrap;
+  word-break: break-all;
+}

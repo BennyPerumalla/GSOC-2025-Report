@@ -1,0 +1,36 @@
+.vlcLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform var(--animation-duration-normal) ease;
+  object-fit: contain;
+}
+
+.vlcLogo:hover .logoImage {
+  transform: scale(1.05);
+}
+
+/* Size variants */
+.sm .logoImage {
+  width: 2rem;
+  height: 2rem;
+}
+
+.md .logoImage {
+  width: 3rem;
+  height: 3rem;
+}
+
+.lg .logoImage {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Dark mode adjustments */
+:global(.dark) .logoImage {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
